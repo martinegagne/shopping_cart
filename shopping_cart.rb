@@ -12,7 +12,9 @@ class ShoppingCart
 
   end
 
-#remove a product
+   def remove_product(item)
+     @@shoppingcart.delete_at(item)
+   end
 
 #add up total cost before taxes
 
