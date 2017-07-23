@@ -9,14 +9,20 @@ class ShoppingCart
     @@shoppingcart << new_product
 
     return new_product
-
+    
   end
 
    def remove_product(item)
      @@shoppingcart.delete_at(item)
    end
 
-#add up total cost before taxes
+   def self.total_cost_bf_tax
+     total = 0
+     @@shoppingcart.each do |shopping_cart|
+       total += shopping_cart.price
+     end
+     puts "Your total before taxes is #{total}"
+  end
 
 #add up total cost after taxes
 
